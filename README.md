@@ -32,6 +32,6 @@ If you'd prefer a less formal approach, send me an email. My contact information
 ## Next steps
 Contributions to convert this to Stata and/or R would be greatly appreciated!
 
-##License
+## License
 See the licence file.
 SAS and all other SAS Institute Inc. product or service names are registered trademarks or trademarks of SAS Institute Inc. in the USA and other countries.
