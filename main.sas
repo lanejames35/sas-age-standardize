@@ -2,110 +2,110 @@
  * Step 1 - change the directories to the correct path  *
  *******************************************************/
 /* Pull in the macros */
-%include 'path\to\age_standardize.sas';
-%include 'path\to\makeAge.sas';
-%include 'path\to\words.sas';
+%include 'c:\path\to\age_standardize.sas' / lrecl=15000;
+%include 'c:\path\to\makeAge.sas' / lrecl=15000;
+%include 'c:\path\to\words.sas' / lrecl=15000;
 
 /********************************************************
  * Step 2 - import the age group formats 
  * N.B. Change the location of the file below!
  *******************************************************/
 data ageGroupFormat;
-	length
-	  fmtname          $ 7
-	  start            $ 2
-	  end              $ 4
-	  label            $ 5
-	  min                8
-	  max                8
-	  default            8
-	  length             8
-	  fuzz               8
-	  prefix           $ 1
-	  mult               8
-	  fill             $ 1
-	  noedit             8
-	  type             $ 1
-	  sexcl            $ 1
-	  eexcl            $ 1
-	  hlo              $ 1
-	  decsep           $ 1
-	  dig3sep          $ 1
-	  datatype         $ 1
-	  language         $ 1 ;
-	format
-	  fmtname          $char7.
-	  start            $char2.
-	  end              $char4.
-	  label            $char5.
-	  min              best1.
-	  max              best2.
-	  default          best1.
-	  length           best1.
-	  fuzz             best1.
-	  prefix           $char1.
-	  mult             best1.
-	  fill             $char1.
-	  noedit           best1.
-	  type             $char1.
-	  sexcl            $char1.
-	  eexcl            $char1.
-	  hlo              $char1.
-	  decsep           $char1.
-	  dig3sep          $char1.
-	  datatype         $char1.
-	  language         $char1. ;
-	informat
-	  fmtname          $char7.
-	  start            $char2.
-	  end              $char4.
-	  label            $char5.
-	  min              best1.
-	  max              best2.
-	  default          best1.
-	  length           best1.
-	  fuzz             best1.
-	  prefix           $char1.
-	  mult             best1.
-	  fill             $char1.
-	  noedit           best1.
-	  type             $char1.
-	  sexcl            $char1.
-	  eexcl            $char1.
-	  hlo              $char1.
-	  decsep           $char1.
-	  dig3sep          $char1.
-	  datatype         $char1.
-	  language         $char1. ;
-	/* Change this line to match the file location */
-	infile 'path\to\ageGroupFormat.csv'
-	  lrecl=54
-	  encoding="utf-8"
-	  termstr=lf
-	  missover
-	  dsd ;
-	input
-	  fmtname          : $char7.
-	  start            : $char2.
-	  end              : $char4.
-	  label            : $char5.
-	  min              : ?? best1.
-	  max              : ?? best2.
-	  default          : ?? best1.
-	  length           : ?? best1.
-	 fuzz             : ?? best1.
-	 prefix           : $char1.
-	 mult             : ?? best1.
-	 fill             : $char1.
-	 noedit           : ?? best1.
-	 type             : $char1.
-	 sexcl            : $char1.
-	 eexcl            : $char1.
-	 hlo              : $char1.
-	 decsep           : $char1.
-	 dig3sep          : $char1.
-	 datatype         : $char1.
-	 language         : $char1. ;
+   length
+     fmtname          $ 7
+     start            $ 2
+     end              $ 4
+     label            $ 5
+     min                8
+     max                8
+     default            8
+     length             8
+     fuzz               8
+     prefix           $ 1
+     mult               8
+     fill             $ 1
+     noedit             8
+     type             $ 1
+     sexcl            $ 1
+     eexcl            $ 1
+     hlo              $ 1
+     decsep           $ 1
+     dig3sep          $ 1
+     datatype         $ 1
+     language         $ 1 ;
+   format
+     fmtname          $char7.
+     start            $char2.
+     end              $char4.
+     label            $char5.
+     min              best1.
+     max              best2.
+     default          best1.
+     length           best1.
+     fuzz             best1.
+     prefix           $char1.
+     mult             best1.
+     fill             $char1.
+     noedit           best1.
+     type             $char1.
+     sexcl            $char1.
+     eexcl            $char1.
+     hlo              $char1.
+     decsep           $char1.
+     dig3sep          $char1.
+     datatype         $char1.
+     language         $char1. ;
+   informat
+     fmtname          $char7.
+     start            $char2.
+     end              $char4.
+     label            $char5.
+     min              best1.
+     max              best2.
+     default          best1.
+     length           best1.
+     fuzz             best1.
+     prefix           $char1.
+     mult             best1.
+     fill             $char1.
+     noedit           best1.
+     type             $char1.
+     sexcl            $char1.
+     eexcl            $char1.
+     hlo              $char1.
+     decsep           $char1.
+     dig3sep          $char1.
+     datatype         $char1.
+     language         $char1. ;
+   /* Change this line to match the file location */
+   infile 'c:\path\to\ageGroupFormat.csv'
+     lrecl=54
+     encoding="utf-8"
+     termstr=lf
+     missover
+     dsd ;
+   input
+     fmtname          : $char7.
+     start            : $char2.
+     end              : $char4.
+     label            : $char5.
+     min              : ?? best1.
+     max              : ?? best2.
+     default          : ?? best1.
+     length           : ?? best1.
+    fuzz             : ?? best1.
+    prefix           : $char1.
+    mult             : ?? best1.
+    fill             : $char1.
+    noedit           : ?? best1.
+    type             : $char1.
+    sexcl            : $char1.
+    eexcl            : $char1.
+    hlo              : $char1.
+    decsep           : $char1.
+    dig3sep          : $char1.
+    datatype         : $char1.
+    language         : $char1. ;
 run;
 /* create the age group format */
 proc format cntlin=ageGroupFormat;
@@ -117,8 +117,8 @@ run;
  **************************************/
 *Create sample data set with raw event numbers numbers;
 data study_data;
-format AgeGroup $char5. events 8.;
-input AgeGroup$ events;
+format foo $char5. events 8.;
+input foo$ events;
 cards;
 <1     37
 1-4    25
@@ -362,7 +362,7 @@ run;
 /* Run the macro */
 /* Edit the inputs when your done with the example */
 %age_standardize(data=study_data /* datasets containing cases */
-                 ,age_var=agegroup /* age variable */
+                 ,age_var=foo /* age variable */
                  ,data_type=AGGREGATE /* Takes either AGGREGATE or RECORD */
                  ,data_counts=events /* case counts variable */
                  ,denominator=pop_data /* dataset containing denominators */
@@ -370,6 +370,6 @@ run;
                  ,denominator_age=agegroup /* age variable */
                  ,denominator_totals=population /* population counts variable */
                  ,standard=canada2011 /* dataset containing standard population */
-					  ,geo_var=/* leave blank for total rate. Can use sex var here too */
-					  ,where=/* use this to subset the data to a specific age group */
+                 ,geo_var=/* leave blank for total rate. Can use sex var here too */
+                 ,where=/* use this to subset the data to a specific age group */
                  )

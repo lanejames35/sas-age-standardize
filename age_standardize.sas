@@ -5,7 +5,7 @@ James Lane
 
 23 December 2015
 
-Updated: 24 January 2017
+Updated: 21 March 2018
 -------------------------------------------------------------*/
 %macro age_standardize(data=,
                   data_type=RECORD,
@@ -16,6 +16,7 @@ Updated: 24 January 2017
                   denominator_type=AGGREGATE,
                   denominator_age=,
                   denominator_totals=,
+                  standard=pop.canada2011,
                   where=);
 /*********************************************************/
 /*   Parameter validation                         */
@@ -88,7 +89,7 @@ Updated: 24 January 2017
       %let _varnum=%sysfunc(varnum(&_dsid,&denominator_age)); 
       %if &_varnum=0 %then %do; /* variable not found -- throw warning */
          %let _varflag=E;
-         %let _varmsg= The variable &denominator_age does not exits in the dataset &data.!;
+         %let _varmsg= The variable &denominator_age does not exits in the dataset &denominator.!;
          %goto err_exit;
       %end;
       %else %let _dsid=%sysfunc(close(&_dsid)); /* variable found -- close dataset */
@@ -175,10 +176,10 @@ run;
             ,agecat
       ;
    quit;
-	/* Check if we need to consider sex when forming the denominators
-	 * if so, check the format of the variable (i.e. single character - M F
-	 * versus full word - male female)
-	 */
+   /* Check if we need to consider sex when forming the denominators
+    * if so, check the format of the variable (i.e. single character - M F
+    * versus full word - male female)
+    */
    data _null_;
       set numerator;
       regex=prxparse('/(SEX|GENDER)/');
@@ -320,7 +321,7 @@ run;
 %end;
 %else %do;
    data stdrd;
-      set pop.canada2011;
+      set &standard;
       agecat = put(age,cubeage.);
    run;
    proc sql noprint;
