@@ -21,13 +21,13 @@ Alternatively, you can download the programs in a `.zip` file.
 The `main.sas` program is the script you will need to customize and run to get age-standardized rates. There are three places that need input to function properly:
    1. Each `%include` statement should specifiy the path to the respective `.sas` file on your machine.
    2. The `infile` statment should specify the path to the `ageGroupFormat.csv` file on your machine.
-   3. The parameters of the `%age_standardize` macro will need to be adjusted to macth the set-up of your datasets. Here, use the example to examine how the macro parameters macth up with the example datasets.
+   3. The parameters of the `%age_standardize` macro will need to be adjusted to match the set-up of your datasets. Here, use the example to examine how the macro parameters macth up with the example datasets.
 
 ### Run the program
 Once all the inputs are set, run `main.sas` as usual with `F4` or the `Submit` button.
 ## Feedback
 All bugs, feature requests, pull request, complaints, feedback, etc. are welcome. Please [create an issue](https://github.com/lanejames35/sas-age-standardize/issues).
-If you'd prefer a less formal approach, send me an email. My contact informationis found on [my profile page](https://github.com/lanejames35).
+If you'd prefer a less formal approach, send me an email. My contact information is found on [my profile page](https://github.com/lanejames35).
 
 ## Next steps
 Contributions to convert this to Stata and/or R would be greatly appreciated!
