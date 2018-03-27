@@ -5,7 +5,7 @@ James Lane
 
 23 December 2015
 
-Updated: 21 March 2018
+Updated: 27 March 2018
 -------------------------------------------------------------*/
 %macro age_standardize(data=,
                   data_type=RECORD,
