@@ -33,5 +33,6 @@ If you'd prefer a less formal approach, send me an email. My contact information
 Contributions to convert this to Stata and/or R would be greatly appreciated!
 
 ## License
-See [the licence file](https://github.com/lanejames35/sas-age-standardize/blob/master/LICENSE).
+See [the license file](https://github.com/lanejames35/sas-age-standardize/blob/master/LICENSE).
+
 SAS and all other SAS Institute Inc. product or service names are registered trademarks or trademarks of SAS Institute Inc. in the USA and other countries.
